@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+        font-family: 'YouSheBiaoTiHei';
+        src: url('./YouSheBiaoTiHei-2.ttf') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .center {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            max-width: 1920px;
+        }
+        .banner1 {
+            width: 100%;
+            height: 760px;
+            display: flex;
+            background-image: url(./pic/page1.png);
+            background-size: cover;
+        }
+        .banner1 .center {
+            display: flex;
+            
+        }
+        .banner1 .zong {
+            margin: 0 auto;
+            display: flex;
+        }
+        .banner1 .zuo {
+            margin-left: 80px;
+            position: relative;
+        }
+        .banner1 .tu {
+            margin-top: 145px;
+            margin-bottom: 119px;
+            margin-left: 17px;
+        }
+        .banner1 .dizuo {
+            position: absolute;
+            margin: 229px 403px auto 898px;
+        }   
+        .banner1 .title1 {
+            display: flex;
+            margin: 131px auto 0px 0px;
+            align-items: center;
+        }
+        .banner1 .logo {
+            width: 85px;
+            height: 91px;
+            margin-right: 11px;
+        }
+        .banner1 .name {
+            display: flex;
+        }
+        .banner1 .name h2 {
+            font-size: 96px;
+            font-family: 'YouSheBiaoTiHei';
+
+            color: #fff;
+        }
+        .banner1 .name h3 {
+            font-size: 96px;
+            font-family: 'YouSheBiaoTiHei';
+            color: #FFD234;
+        }
+        .banner1 .content1 {
+            margin: 24px auto 0 0px;
+            display: flex;
+        }
+        .banner1 .content1 .span1 {
+            font-size: 40px;
+            font-weight: 700;
+            font-family: "YouSheBiaoTiHei";
+            color: #fff;
+        }
+        .banner1 .content1 .span2 {
+            font-size: 40px;
+            font-weight: 700;
+            font-family: "YouSheBiaoTiHei";
+            background: linear-gradient(to right, #2684FA, #09E2FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin-left: 8px;
+        }
+        .banner1 .content2 {
+            margin: 24px auto 0 0px;
+            width: 500px;
+        }
+        .banner1 .content2 p {
+            font-size: 20px;
+            font-family: "Microsoft YaHei UI";
+            color: #fff;
+        }
+        .banner1 a {
+            display: flex;
+        }
+        .banner1 .download {
+            width: 191px;
+            height: 63px;
+            margin-right: 38px;
+            border-radius: 10px;
+            text-align: center;
+            align-items: center;
+            background: linear-gradient(to right, #5EADE6 30%, #1D98EF);
+        }
+        .download:hover {
+            background: linear-gradient(to right, #0088E9 30%, #0077CA);
+        }
+        .download img {
+            width: 24px;
+            height: 24px;
+            margin: 19px 12px auto 37px;
+        }
+        .banner1 .buy {
+            width: 256px;
+            height: 76px;
+            border-radius: 12px;
+            text-align: center;
+            align-items: center;
+            background: linear-gradient(to right, #FFC703 70%, #FF9D2D);
+        }
+        .buy:hover {
+            background: linear-gradient(to right, #FF8C00, #FF8C00);
+        }
+        .buy img {
+            width: 30px;
+            height: 30px;
+            margin: 23px 8px auto 50px;
+        }
+        .banner1 .download div p {
+            font-size: 20px;
+            font-family: "Microsoft YaHei UI";
+            color: #fff;
+        }
+        .banner1 .buy div p {
+            font-size: 30px;
+            font-weight: 700;
+            font-family: "YouSheBiaoTiHei";
+            color: #fff;
+        }
+        .buy div {
+            background: linear-gradient(to bottom, #5D0D0D, #BD4800, #530202);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .banner1 .button {
+            display: flex;
+            align-items: center;
+            margin: 48px auto 0px 0px;
+        }
+        .banner1 .win {
+            margin: 24px auto auto 0px;
+        }
+        .win p {
+            color: #7F848B;
+            font-size: 20px;
+        }
+        .xiaoguo {
+            width: 128px;
+            height: 46.5px;
+            position: absolute;
+            left: 385px;
+            top: 430px;
+            z-index: 10;
+            animation: jmp 1.5s linear infinite alternate;
+        }
+        @keyframes jmp {
+            0% {
+                transform: translateY(30%)
+            }
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        /* 扫光 */
+        @keyframes yellowShine {
+            0% {
+                transform: translateX(-100%) skewX(-20deg);
+            }
+            100% {
+                transform: translateX(800%) skewX(-20deg);
+            }
+            }
+
+            .shine-btn {
+                position: relative;
+                overflow: hidden;
+            }
+            .shine-btn::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 10%;
+                height: 100%;
+                background: linear-gradient(to right, #FFEBA7, #FFEBA7 100%);
+                opacity: 0.8;
+                animation: yellowShine 5s infinite linear;
+                pointer-events: none; 
+            }
+
+
+
+        .banner2 {
+            width: 100%;
+            height: 660px;
+            background-image: 
+            url(./pic/page2.png);
+        }
+        .banner2 .center {
+            display: flex;
+            flex-direction: column;
+        }
+        .banner2 .line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 127px;
+            z-index: 0;
+        }
+        .banner2 .title1 {
+            width: 398px;
+            height: 62px;
+            margin: 0 auto;
+            margin-top: 114px;
+            position: relative;
+            z-index: 1;
+        }
+        .title1 h2 {
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 48px;
+            color: #fff;
+        }
+        .banner2 .content1 {
+            width: 929px;
+            height: 62px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }  
+        .content1 p {
+            text-align: center;
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 24px;
+            color: #A9A9A9;
+        }
+        .banner2 ul {
+            width: 1109px;
+            height: 181px;
+            display: flex;
+            gap: 70px;
+            margin: 0 auto;
+            margin-top: 49px;
+        }
+        .banner2 ul li {
+            width: 323px;
+            height: 181px;
+            position: relative;
+        }
+        .banner2 ul li:nth-child(1) {
+            background-image: url(./pic/img_01.png)
+            ;
+        }
+        .banner2 ul li:nth-child(2) {
+            background-image: url(./pic/5.png)
+            ;
+        }
+        .banner2 ul li:nth-child(3) {
+            background-image: url(./pic/6.png)
+            ;
+        }
+        .banner2 ul li img:nth-child(1) {
+            position: absolute;
+            margin: 38px 24px 24px 27px;
+        }
+        .banner2 ul li img:nth-child(2) {
+            position: absolute;
+            left: -27px;
+            top: -17px;
+        }
+
+        .item {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .banner2 ul li h3 span {
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 22px;
+            color: #11FCFD;
+        }
+        .banner2 ul li p {
+            font-family: 'Microsoft YaHei UI';
+            font-size: 16px;
+            color: #fff;
+            display: inline;
+        }
+        .banner2 ul li div {
+            margin: 59px 32px 40px 38px;
+        }
+        .banner2 a {
+            display: flex;
+            width: 256px;
+            height: 76px;
+            margin: 73px auto 0 auto;
+            background: linear-gradient(to right bottom, #2DFEFF, #0059FF);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .banner2 a span {
+            font-size: 32px;
+            margin: 17px 68px 17px 69px;
+            font-family: 'YouSheBiaoTiHei';
+            color: #fff;
+            text-align: center;
+        }
+
+
+
+        .banner3 {
+            width: 100%;
+            height: 2377px;
+            background-image: url(./pic/page3_bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+}
+        .banner3 .center {
+            display: flex;
+            flex-direction: column;
+        }
+        .banner3 .line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 127px;
+            z-index: 0;
+        }
+        .banner3 .title1 {
+            margin: 0 auto;
+            margin-top: 130px;
+            position: relative;
+            z-index: 1;
+        }
+        .banner3 .title1 h3 {
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 48px;
+            color: #fff;
+        }
+        .banner3 .content {
+            margin: 0 auto;
+            margin-top: 3px;
+            position: relative;
+            z-index: 1;
+        }
+        .banner3 .content p {
+            text-align: left;
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 24px;
+            color: #A9A9A9;
+        }
+        .banner3 .block1 {
+            width: 1125px;
+            height: 402px;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 101px;
+        }
+        .banner3 .block2 {
+            width: 1125px;
+            height: 402px;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 92px;
+        }
+        .block2 img {
+            width: 583px;
+            height: 402px;
+        }
+        .banner3 .block3 {
+            width: 1128px;
+            height: 409px;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 97px;
+        }
+        .banner3 .block4 {
+            width: 1340px;
+            height: 673px;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 108px;
+        }
+        .banner3 .content1 {
+            width: 487px;
+            margin-left: 33px;
+        }
+        .banner3 .content1 p {
+            text-align: left;
+        }
+        .banner3 .content2 {
+            width: 487px;
+            margin-right: 55px;
+        }
+        .banner3 .content3 {
+            width: 487px;
+            margin-left: 12px;
+        }
+        .banner3 .content4 {
+            width: 487px;
+            margin-right: 41px;
+        }
+
+        .block1 h1, .block3 h1 {
+            font-size: 40px;
+            font-family: 'YouSheBiaoTiHei';
+            background: linear-gradient(to bottom, #3C93F9, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .block2 h1, .block4 h1 {
+            font-size: 40px;
+            font-family: 'YouSheBiaoTiHei';
+            background: linear-gradient(to bottom, #F68B00, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .block1 h2 span, .block3 h2 span {
+            color: #338EFF;
+            font-size: 40px;
+        }
+        .block2 h2 span, .block4 h2 {
+            font-family: 'YouSheBiaoTiHei';
+            color: #FF6F00;
+            font-size: 40px;
+        }
+        .block1 h2, .block2 h2, .block3 h2, .block4 h3 {
+            font-size: 36px;
+            font-family: 'YouSheBiaoTiHei';
+            color: #fff;
+        }
+        .banner3 ul {
+            gap: 16px;
+        }
+        .banner3 ul li {
+            display: flex;
+
+        }
+        .banner3 ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+        .banner3 ul li {
+            font-size: 16px;
+            font-family: 'Microsoft YaHei UI';
+            color: #fff;
+        }
+        .banner3 p {
+            font-family: 'Microsoft YaHei UI';
+            font-size: 18px;
+            color: #fff;
+            margin: 5px auto 36px auto;
+        }
+        .banner3 ul li:nth-child(2), .banner3 ul li:nth-child(3), .banner3 ul li:nth-child(4) {
+            margin-top: 12px;
+        }
+
+
+
+        .banner4 {
+            width: 100%;
+            height: 921px;
+            background-image: url(./pic/page4_bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            overflow: hidden;
+        }
+        .banner4 .center {
+            display: flex;
+            flex-direction: column;
+        }
+        .banner4 .player {
+            width: 527px;
+            height: 144px;
+            margin: 0 auto;
+            margin-top: 75px;
+            background-image: url(./pic/image\ 181.png);
+            overflow: hidden;
+        }
+        .player h3 {
+            margin-top: 43px;
+            font-family: 'YouSheBiaoTiHei';
+            font-size: 45px;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(to top, #4BE3F7, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .banner4 .true {
+            margin: 0 auto;
+            margin-top: 10px;
+            align-items: center;
+            display: flex;
+        }
+        .true .star {
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            background-color: #11FCFD;
+        }
+        .true p {
+            font-size: 24px;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: #fff;
+        }
+        .banner4 .com1 {
+            display: flex;
+            gap: 61px;
+            width: 100%;
+            max-width: 1920px;
+            height: 124px;
+            margin: 0 auto;
+            margin-top: 93px;
+            animation: gund 25s linear infinite;
+        }
+        .com1:hover {
+            animation-play-state: paused;
+        }
+        .banner4 .com1:nth-child(4) {
+            margin-left: 500px;
+        }
+        .banner4 .com1 .c1 {
+            width: 955px;
+            height: 124px;
+            display: flex;
+            border-radius: 12px;
+            border: 1px solid #00FFDD;
+        }
+        .com1 .head {
+            width: 77px;
+            height: 77px;
+            border-radius: 50%;
+            margin: 23.5px 0px auto 48px;
+        }
+        .com1 .right {
+            width: 783px;
+            height: 95px;
+            margin: 14.5px 37px 14.5px 21px;
+        }
+        .com1 .name {
+            height: 31px;
+            display: flex;
+        }
+        .com1 .name p {
+            font-family: 'Microsoft YaHei UI';
+            font-size: 16px;
+            color: #fff;
+            white-space: nowrap;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        .com1 .name div:nth-child(2) {
+            height: 28px;
+            border-radius: 6px;
+            margin-left: 15px;
+            align-items: center;
+            background: linear-gradient(to right, #FF6F00, #FFA024);
+        }
+        .com1 .name div:nth-child(3) {
+            height: 28px;
+            border-radius: 6px;
+            margin-left: 10px;
+            align-items: center;
+            background: linear-gradient(to right, #FF6F00, #FFA024);
+        }
+        .com1 h3 {
+            font-size: 24px;
+            color: #fff;
+        }
+        .com1 .name img {
+            width: 207px;
+            height: 31px;
+            margin: 0px 0px auto auto;
+        }
+        .banner4 .com1 .pl {
+            width: 783px;
+            height: 48px;
+            margin-top: 16.5px;
+        }
+        .banner4 .com1 .pl p {
+            color: #fff;
+                font-family: 'Microsoft YaHei UI';
+                font-size: 18px;
+        }
+        @keyframes gund {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-430%);
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="banner1">
+            <div class="center">
+                <div class="zong">
+                <div class="zuo">
+                    <img class="xiaoguo" src="./pic/btn_xiaoguo.png">
+                    <div class="title1">
+                <img class="logo" src="./pic/logo.png" alt="">
+                <div class="name"><h2>游戏</h2><h3>多多</h3></div>
+                    </div>
+
+                <div class="content1">
+                    <span class="span1">你的</span>
+                    <span class="span2">智能游戏助手</span>
+                </div>
+
+                <div class="content2">
+                    <p>为硬核玩家、游戏主播和普通玩家打造极致游戏体验，
+让每一次游戏都流畅如丝。</p>
+                </div>
+                <div class="button">
+                <a class="download" href="">
+                    <img src="./pic/Frame.png" alt="">
+                    <div><p>免费下载</p></div>
+                </a>
+
+                <a class="buy shine-btn" href="">
+                    <img src="./pic/Frame (1).png" alt="">
+                    <div><p>立即购买</p></div>
+                    
+                </a>
+                </div>
+                <div class="win">
+                    <p>Windows 7/8/10/11</p>
+                </div>
+                </div>
+                <img class="tu" src="./pic/banner1.png" alt="">
+                <img class="dizuo" src="./pic/img_dizuo.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="banner2">
+            <div class="center">
+                <img class="line" src="./pic/img_line.png" alt="">
+                <div class="title1">
+                    <h2>为什么选择游戏多多</h2>
+                </div>
+                <div class="content1">
+                    <p>我们深耕游戏体验优化领域，打造All-in-One智能性能中枢，满足不同类型玩家的核心需求， 成为你游戏路上的最佳搭档。</p>
+                </div>
+                <ul>
+                    <!-- 第一 -->
+                    <li>
+                        <img src="./pic/normal.png" alt="">
+                        <img class="item" src="./pic/Rectangle.png" alt="">
+                        <div class="con1">
+                            <h3><span class="span-1">智能硬件监控与性能优化：</span>
+                                <p>释放硬件潜力，稳步提升帧率！硬件实时监控，跑分优化一键搞定。</p>
+                            </h3>
+                            
+                        </div>
+                    </li>
+                    <!-- 第二 -->
+                    <li>
+                        <img src="./pic/normal.png" alt="">
+                        <img class="item" src="./pic/Rectangle.png" alt="">
+                        <div class="con2">
+                            <h3><span class="span-2">滤镜画质增强：</span>
+                                <p>游戏更具优势！竞技级优化，昏暗场景下也能清晰锁敌。</p>
+                            </h3>
+                            
+                        </div>
+                    </li>
+                    <!-- 第三 -->
+                    <li>
+                        <img src="./pic/normal.png" alt="">
+                        <img class="item" src="./pic/Rectangle.png" alt="">
+                        <div class="con3">
+                            <h3><span class="span-3">全场景游戏辅助工具：</span>
+                                <p>全面提升你的游戏体验！低占用不卡顿，畅玩主流游戏。</p>
+                            </h3>
+                            
+                        </div>
+                    </li>
+                </ul>
+                <a href=""><span>立即体验</span></a>
+            </div>
+        </div>
+        <div class="banner3">
+            <div class="center">
+                <img class="line" src="./pic/img_line.png" alt="">
+                <div class="title1">
+                    <h3>核心功能</h3>
+                </div>
+                <div class="content">
+                    <p>从硬件监控到性能优化，覆盖游戏全生命周期的实用功能</p>
+                </div>
+                <div class="block1">
+                    <img src="./pic/banner_yingjian_01.png" alt="">
+                    <div class="content1">
+                        <h1>01</h1>
+                        <h2><span>硬件</span>监控 & <span>性能</span>调节</h2>
+                        <p>实时监测您的硬件性能，无论是CPU、GPU还是内存，全面掌控，随时调节，让您的设备始终保持最佳状态。</p>
+                        <ul>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                实时监控硬件运行状态
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                随时了解CPU、GPU等使用情况，掌控全局
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                一键完成各项性能优化设置
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                开启游戏后实时进行性能监控
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block2">
+                    <div class="content2">
+                        <h1>02</h1>
+                        <h2>内置游戏滤镜，助力<span>画质提升</span></h2>
+                        <p>提升游戏画面质感，通过优化明暗度和色彩饱和度，助您提升敌人可见性，掌控胜局！</p>
+                        <ul>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                支持自定义滤镜参数，打造专属视觉风格
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                暗部场景平衡增强
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                多款专业游戏画质增强滤镜
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                抢占竞技先机 + 沉浸感爆棚
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./pic/banner2_lvjing.png" alt="">
+                    
+                </div>
+
+                <div class="block3">
+                    <img src="./pic/banner_youhua_03.png" alt="">
+                    <div class="content3">
+                        <h1>03</h1>
+                        <h2>一键优化，<span>畅玩游戏无卡顿</span></h2>
+                        <p>告别卡顿，畅玩所有热门游戏，只需一键设置，即刻享受流畅的游戏体验，无需担忧性能瓶颈！战斗！快人一步！</p>
+                        <ul>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                适配千款主流游戏的优化方案
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                后台进程智能清理
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                卡顿监测与智能修复
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (2).png" alt="">
+                                轻松享受畅快游戏体验
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block4">
+                    <div class="content4">
+                        <h1>04</h1>
+                        <h2>性能&桌面监控</h2>
+                        <h3>更了解你的电脑状况</h3>
+                        <p>实时监测您的硬件性能，无论是CPU、GPU还是内存，全面掌控，随时调节，让您的设备始终保持最佳状态。</p>
+                        <ul>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                桌面组件实时可视化，电脑状态一眼看透
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                 自动生成性能运行报告，精准定位问题
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                桌面 / 游戏场景自动适配，开游戏秒切专属游戏内监控
+                            </li>
+                            <li>
+                                <img src="./pic/Frame (3).png" alt="">
+                                性能数据清晰不挡视野，可专心杀敌！
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./pic/banner_jiankong_04.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        
+
+
+        <div class="banner4">
+            <div class="center">
+                <div class="player">
+                    <h3>玩家们怎么说?!</h3>
+                </div>
+                <div class="true">
+                    <div class="star">
+
+                    </div>
+                    <p>来自不同类型玩家的真实使用体验</p>
+                    <div class="star">
+
+                    </div>
+                </div>
+                <div class="com1">
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399.png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>浅唱流年</h3></div>
+                            <div><p>硬件发烧友 </p></div>
+                            <div><p>3A大作爱好者</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>游戏多多的硬件监控太精准了，能实时看到每一个核心的负载，一键性能优化后，直接在赛博朋克2077里稳定60帧，再也没有出现过突然掉帧的情况，是硬核玩家的必备工具！</p>
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (1).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>啊萌</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <div><p>自媒体工作者</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>这游戏定制滤镜太顶了！画质直接清透不少，暗角里的敌人一眼瞅见，轻量化工具，也不占直播资源，直播全程丝滑不卡!已分享给小伙伴!</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (2).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>星坠海</h3></div>
+                            <div><p>游戏爱好者</p></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>防烧屏功能挺实用的，晚上挂游戏睡觉，不用怕屏幕一直亮着烧屏，自动保护太省心了。</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (3).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>溪溪不嘻嘻</h3></div>
+                            <div><p>主机玩家</p></div>
+                            <div><p>画质党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>平时玩《APEX》《英雄联盟》，最怕突然卡顿掉帧，还担心设备用久了出问题。它能直接看到 CPU 运行负载和温度，一眼就知道卡顿是不是因为硬件扛不住</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (4).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>游戏宅的日常</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <div><p>办公本玩游戏</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>我的笔记本配置一般，玩永劫无间总是卡顿，抱着试试的心态用了游戏多多的一键优化，没想到流畅度提升了不止一个档次，不用懂任何专业设置，点一下就能玩得舒服，太适合我这种新手了！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (5).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>泡面加蛋</h3></div>
+                            <div><p>学生党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>旧笔记本跑《英雄联盟》团战必卡，用游戏多多监控看到 CPU 直接拉满 100% 负载，一键优化后帧率稳定多了，不用换设备就能救回老电脑，学生党狂喜！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (6).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>凌晨三点党</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <div><p>普通玩家</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>晚上挂《崩坏：星穹铁道》刷体力，最担心 OLED 屏烧出残影。游戏多多的防烧屏会自动触发，同时还能看 CPU 温度，不用手动调屏保，挂机睡觉也安心，这功能太懂熬夜党了！</p>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 尾接头 -->
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399.png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>浅唱流年</h3></div>
+                            <div><p>硬件发烧友 </p></div>
+                            <div><p>3A大作爱好者</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>游戏多多的硬件监控太精准了，能实时看到每一个核心的负载，一键性能优化后，直接在赛博朋克2077里稳定60帧，再也没有出现过突然掉帧的情况，是硬核玩家的必备工具！</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (1).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>啊萌</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <div><p>自媒体工作者</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>这游戏定制滤镜太顶了！画质直接清透不少，暗角里的敌人一眼瞅见，轻量化工具，也不占直播资源，直播全程丝滑不卡!已分享给小伙伴!</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (2).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>星坠海</h3></div>
+                            <div><p>游戏爱好者</p></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>防烧屏功能挺实用的，晚上挂游戏睡觉，不用怕屏幕一直亮着烧屏，自动保护太省心了。</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (3).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>溪溪不嘻嘻</h3></div>
+                            <div><p>主机玩家</p></div>
+                            <div><p>画质党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>平时玩《APEX》《英雄联盟》，最怕突然卡顿掉帧，还担心设备用久了出问题。它能直接看到 CPU 运行负载和温度，一眼就知道卡顿是不是因为硬件扛不住</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (4).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>游戏宅的日常</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <div><p>办公本玩游戏</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>我的笔记本配置一般，玩永劫无间总是卡顿，抱着试试的心态用了游戏多多的一键优化，没想到流畅度提升了不止一个档次，不用懂任何专业设置，点一下就能玩得舒服，太适合我这种新手了！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (5).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>泡面加蛋</h3></div>
+                            <div><p>学生党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>旧笔记本跑《英雄联盟》团战必卡，用游戏多多监控看到 CPU 直接拉满 100% 负载，一键优化后帧率稳定多了，不用换设备就能救回老电脑，学生党狂喜！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (6).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>凌晨三点党</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <div><p>普通玩家</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>晚上挂《崩坏：星穹铁道》刷体力，最担心 OLED 屏烧出残影。游戏多多的防烧屏会自动触发，同时还能看 CPU 温度，不用手动调屏保，挂机睡觉也安心，这功能太懂熬夜党了！</p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+                <div class="com1">
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (7).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>夜猫子阿K</h3></div>
+                            <div><p>手游主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>第一次玩《APEX 英雄》总卡顿，不知道是设备问题还是网的锅。用游戏多多一看 CPU 直接满负载，点了一键优化就顺多了，不用查一堆参数教程，萌新也能轻松搞定卡顿！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (8).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>奶茶不加糖</h3></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>挂《剑与远征》这种放置游戏，总怕 CPU 一直高负载老化快。游戏多多能盯着温度，超过阈值就提醒，一键优化后后台占用直接降了很多，同时防烧屏还能保护屏幕，挂机养老也能护设备！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (9).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>摸鱼小能手</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <div><p>办公本玩游戏</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>台式和笔记本都装了游戏多多，监控数据不管是台式的高配置还是笔记本的轻薄本，都能精准显示 CPU 温度 / 负载，一键优化还能自动适配设备性能，不用来回调不同设置，省事儿。</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (10).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>熬夜冲分</h3></div>
+                            <div><p>学生党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>凌晨肝《永劫无间》，屏幕太暗伤眼、太亮又晃眼。用了游戏多多的暗部优化后，阴影里的敌人能看清，屏幕整体亮度刚好不刺眼，熬夜冲分也能护眼睛</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (11).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>塔科夫垃圾人</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《逃离塔科夫》的暗室物资太难找！开了暗部 + 显卡色彩双滤镜，柜子里的子弹、背包都能清晰看到了，同时敌人的藏身处也更明显了，直接爽局!</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (12).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>快枪手</h3></div>
+                            <div><p>手游主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>刚枪时突然进暗巷，直接打开暗部滤镜，敌人瞬间显形；出了暗巷再按一下关掉，不影响亮处画质，热键操作比切设置界面快 10 倍，战斗中根本不耽误反应！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (13).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>萌新刚枪菜</h3></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《和平精英》雪地模式反光太刺眼，看久了眼睛疼还看不清敌人。开了游戏滤镜的 “防雪盲” 模式，画面瞬间柔和不晃眼，同时敌人的白衣服在雪地里也能显出来，终于不用瞎着眼刚枪了！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (14).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>赛博夜游神</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《赛博朋克 2077》的夜之城太暗，之前很多霓虹细节看不清。调了显卡设置的色彩饱和度优化后，夜景的灯光层次变明显，暗巷里的 NPC 和物资也能一眼看到，既不丢氛围又提升清晰度！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- 尾接头 -->
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (7).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>夜猫子阿K</h3></div>
+                            <div><p>手游主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>第一次玩《APEX 英雄》总卡顿，不知道是设备问题还是网的锅。用游戏多多一看 CPU 直接满负载，点了一键优化就顺多了，不用查一堆参数教程，萌新也能轻松搞定卡顿！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (8).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>奶茶不加糖</h3></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>挂《剑与远征》这种放置游戏，总怕 CPU 一直高负载老化快。游戏多多能盯着温度，超过阈值就提醒，一键优化后后台占用直接降了很多，同时防烧屏还能保护屏幕，挂机养老也能护设备！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (9).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>摸鱼小能手</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <div><p>办公本玩游戏</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>台式和笔记本都装了游戏多多，监控数据不管是台式的高配置还是笔记本的轻薄本，都能精准显示 CPU 温度 / 负载，一键优化还能自动适配设备性能，不用来回调不同设置，省事儿。</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (10).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>熬夜冲分</h3></div>
+                            <div><p>学生党</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>凌晨肝《永劫无间》，屏幕太暗伤眼、太亮又晃眼。用了游戏多多的暗部优化后，阴影里的敌人能看清，屏幕整体亮度刚好不刺眼，熬夜冲分也能护眼睛</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (11).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>塔科夫垃圾人</h3></div>
+                            <div><p>游戏主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《逃离塔科夫》的暗室物资太难找！开了暗部 + 显卡色彩双滤镜，柜子里的子弹、背包都能清晰看到了，同时敌人的藏身处也更明显了，直接爽局!</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (12).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>快枪手</h3></div>
+                            <div><p>手游主播</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>刚枪时突然进暗巷，直接打开暗部滤镜，敌人瞬间显形；出了暗巷再按一下关掉，不影响亮处画质，热键操作比切设置界面快 10 倍，战斗中根本不耽误反应！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (13).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>萌新刚枪菜</h3></div>
+                            <div><p>普通用户</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《和平精英》雪地模式反光太刺眼，看久了眼睛疼还看不清敌人。开了游戏滤镜的 “防雪盲” 模式，画面瞬间柔和不晃眼，同时敌人的白衣服在雪地里也能显出来，终于不用瞎着眼刚枪了！</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="c1">
+                        <img class="head" src="./pic/Ellipse 399 (14).png" alt="">
+                        <div class="right">
+                        <div class="name">
+                            <div><h3>赛博夜游神</h3></div>
+                            <div><p>休闲玩家</p></div>
+                            <img src="./pic/Frame 3465248.png" alt="">
+                        </div>
+                        <div class="pl">
+                            <p>《赛博朋克 2077》的夜之城太暗，之前很多霓虹细节看不清。调了显卡设置的色彩饱和度优化后，夜景的灯光层次变明显，暗巷里的 NPC 和物资也能一眼看到，既不丢氛围又提升清晰度！</p>
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const li = document.querySelectorAll('li')
+            li[0].addEventListener('mouseenter', function(){
+                document.querySelector('li:nth-child(1) img:nth-child(2)').classList.add('active')
+                document.querySelector('.banner2 .span-1').style.color = "#FFD234"
+                this.style.backgroundImage = "url('./pic/4.png')"
+            })
+
+            li[1].addEventListener('mouseenter', function(){
+                document.querySelector('li:nth-child(2) img:nth-child(2)').classList.add('active')
+                document.querySelector('.banner2 .span-2').style.color = "#FFD234"
+                this.style.backgroundImage = "url('./pic/img_02.png')"
+            })
+
+            li[2].addEventListener('mouseenter', function(){
+                document.querySelector('li:nth-child(3) img:nth-child(2)').classList.add('active')
+                document.querySelector('.banner2 .span-3').style.color = "#FFD234"
+                this.style.backgroundImage = "url('./pic/img_03.png')"
+            })
+
+            li[0].addEventListener('mouseleave', function(){
+                document.querySelector('li:nth-child(1) img:nth-child(2)').classList.remove('active')
+                document.querySelector('.banner2 .span-1').style.color = "#11FCFD"
+                this.style.backgroundImage = "url('./pic/img_01.png')"
+            })
+
+            li[1].addEventListener('mouseleave', function(){
+                document.querySelector('li:nth-child(2) img:nth-child(2)').classList.remove('active')
+                document.querySelector('.banner2 .span-2').style.color = "#11FCFD"
+                this.style.backgroundImage = "url('./pic/5.png')"
+            })
+
+            li[2].addEventListener('mouseleave', function(){
+                document.querySelector('li:nth-child(3) img:nth-child(2)').classList.remove('active')
+                document.querySelector('.banner2 .span-3').style.color = "#11FCFD"
+                this.style.backgroundImage = "url('./pic/6.png')"
+            })
+        
+        </script>
+</body>
+</html>

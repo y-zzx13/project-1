@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金舟软件DirectX.DLL一键修复</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .center {
+            margin: 0 auto;
+        }
+
+        .item {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: #fff;
+            transform: rotate(45deg);
+            box-shadow: 2px 14px 14px -2px rgba(186, 186, 186, 0.25);
+        }
+        .active {
+            display: block;
+        }
+
+        .banner {
+            width: 100%;
+            height: 1080px;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            background-image: url(./pic/ban1.png);
+            background-size: cover;
+        }
+        
+        .banner .center {
+            position: relative;
+            z-index: 1;
+        }
+        .banner::before {
+            content: "";
+            width: 100%;
+            height: 1080px;
+            position: absolute;
+            background-color: #0E1C29;
+            opacity: 60%;
+            z-index: 0;
+            left: 0;
+            top: 0;
+        }
+
+        .banner .nav {
+            width: 100%;
+            height: 70px;
+            display: flex; 
+            position: absolute;
+            left: -330px;           
+        }
+        .nav div {
+            font-family: "Microsoft YaHei UI";
+            font-size: 16px;
+            font-weight: 40;
+            margin: 25px 0px 0px 12px;
+            align-items: center;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+
+        
+        .banner .nav img {
+            width: 40px;
+            height: 40px;
+           margin-left: 360px;
+           margin-top: 15px;
+            
+        }
+        .content1 {
+            width: 820px;
+            height: 90px;
+            margin: 133px auto 0px auto;
+            z-index: 1;
+
+        }
+        .content1 h1 {
+            font-family: "Microsoft YaHei UI";
+            font-size: 68px;
+            font-weight: 700;
+            text-align: center;
+            color: #FFFFFF;
+
+        }
+        .content2 {
+            width: 1003px;
+            height: 30px;
+            margin: 24px auto 50px auto;
+            z-index: 1;
+        }
+        .content2 h3 {
+            font-family: "Microsoft YaHei UI";
+            font-size: 30px;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .banner ul  {
+            display: flex;
+            position: relative;
+            gap: 24px;
+            margin: 0px auto 54px auto;
+            z-index: 1;
+        }
+        .banner ul li {
+            width: 233px;
+            height: 233px;
+            border-radius: 13px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to right, #fcf8f0, #e7fcee);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .banner ul li div {
+            height: 22px;
+            width: 190px;
+            margin: 33px auto 0px auto;
+            text-align: center;
+            
+            font-family: "Microsoft YaHei UI";
+            font-size: 22px;
+            font-weight: 400;
+            font-style: normal;
+            color: #fff;
+        }
+         .banner ul li img {
+            width: 100px;
+            height: 100px;
+            margin: 44px auto 0px auto;
+        }
+        .download {
+            display: flex;
+            width: 327px;
+            height: 73px;
+            z-index: 1;
+            margin: 0 auto;
+            border-radius: 11.51px;
+            background: linear-gradient(to left, #3BCA9F, #6CE477);
+        }
+        .download img {
+            width: 32px;
+            height: 32px;
+            margin: 20px 79px auto auto;
+        }
+        .download div {
+            font-family: "PingFang SC";
+            font-style: bold;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 16px auto 15px 80px;
+            color: #fff;
+        }
+        .guar {
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            margin: 0 auto;
+            margin-top: 18px;
+        }
+        .guar img {
+            width: 22px;
+            height: 22px;
+            margin: 0 auto;
+        }
+        .aut {
+            width: 110px;
+            height: 22px;
+            font-size: 20px;
+            margin-left: 375px;
+            display: flex;
+            align-items: center;
+            font-family: "Microsoft YaHei UI";
+            font-weight: 400;
+            color: #fff;
+        }
+        .safe {
+            width: 110px;
+            height: 22px;
+            font-size: 20px;
+            display: flex;
+            margin-left: 24px;
+            align-items: center;
+            font-family: "Microsoft YaHei UI";
+            font-weight: 400;
+            color: #fff;
+        }
+        .user {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 102px;
+            z-index: 1;
+        }
+        .user span {
+            background: linear-gradient(to right, #1ebea1, #a2e786);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            font-size: 35px;
+            font-family: "Microsoft YaHei UI";
+
+        }
+        .user p {
+            font-size: 20px;
+            font-family: "Microsoft YaHei UI";
+            font-weight: 400;
+            color: #fff;
+        }
+        .user .user1 {
+            margin-left: 190px;
+        }
+        .user .times {
+            margin: auto 0px auto 50px;
+        }
+        .banner .system {
+            width: 610px;
+            height: 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            text-align: center;
+            font-family: "Microsoft YaHei UI";
+            font-size: 20px;
+            font-weight: 400;
+            color: #fff;
+            z-index: 1;
+        }
+        .banner .latest {
+            position: absolute;
+            width: 126px;
+            height: 34px;
+            margin: 107px 0px 0px 0px;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+
+        .banner1 {
+            width: 100%;
+            height: 862px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+        .banner1 .title2 {
+            position: relative;
+            width: 930px;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 150px;
+            font-family: "Douyin Sans";
+            font-weight: 700;
+            font-size: 36px;
+            z-index: 1;
+
+        }
+        .banner1 .title2 h3 {
+            color: #3C3C3C;
+        }
+        .banner1 .p2 {
+            width: 336px;
+            height: 29px;
+            margin: 0 auto;
+            margin-top: 16px;
+            font-family: "Microsoft YaHei";
+            font-size: 28px;
+            font-weight: 400;
+        }
+        .banner1 .p2 p {
+            color: #5A5D66;
+        }
+        .banner1 ul {
+            display: flex;
+            gap: 30px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .banner1 ul li {
+            width: 279px;
+            height: 391px;
+             position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+        }
+        .banner1 ul li div {
+            display: flex;
+            position: relative;
+            z-index: 1;
+            align-items: center;
+        }
+        .banner1 ul li div img {
+            width: 8px;
+            height: 8px;
+        }
+        .banner1 ul li .li-title {
+            margin: 30px auto 0px 24px;
+            font-family: "Microsoft YaHei";
+            font-size: 20px;
+            font-weight: 0;
+            text-align: center;
+            color: #000000;
+            z-index: 1;
+        }
+        .banner1 ul li .li-content {
+            margin: 24px auto 20px 24px;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            color: #5A5D66;
+            z-index: 1;
+        }
+        .banner1 ul li div img {
+            margin-right: 6px;
+        }
+        .banner1 ul li .tu1 {
+            position: absolute;
+            top: 234px;
+            left: 127px;
+            z-index: 0;
+        }
+        .banner1 ul li:nth-child(3) .tu1 {
+            width: 155px;
+            height: 160px;
+        }
+        .banner1 .center {
+            position: relative;
+        }
+        .banner1 .green {
+            position: absolute;
+            width: 188px;
+            height: 95px;
+            left: 950px;
+            top: 150px;
+            z-index: 0;
+        }
+        
+        .banner2 {
+                width: 100%;
+                height: 851px;
+                display: flex;
+                flex-direction: column;
+                background-color: #F6F8F9;
+        }
+        .banner2 .title3 {
+            width: 784px;
+            height: 36px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 160px;
+            font-family: "Douyin Sans";
+            font-size: 30px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .banner2 .center {
+            position: relative;
+        }
+        .banner2 .green1 {
+            position: absolute;
+            width: 167px;
+            height: 85px;
+            left: 620px;
+            top: 158px;
+        }
+        .banner2 ul {
+            width: 421px;
+            height: 424px;
+            margin: 0 auto;
+            margin-top: 70px;
+            margin-left: 25px;
+        }
+        .banner2 ul li {
+            width: 421px;
+            height: 128px;
+            margin-bottom: 20px;
+            display: flex;
+             align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            
+        }
+        .banner2 ul li img {
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            margin-left: 30px;
+            margin-right: 11px;
+        }
+        .banner2 ul li p {
+            margin-left: 100px;
+            font-size: 24px;
+            font-weight: 400;
+            font-family: "Microsoft YaHei";
+        }
+        .banner2 ul li .show2 {
+            display: none;
+        }
+        .high {
+            background: linear-gradient(to left top, #1ebea1 5%, #a2e786);
+            color: #fff;
+            font-weight: 700;
+        }
+        .banner2 ul li:hover {
+            background: linear-gradient(to left top, #1ebea1 5%, #a2e786);
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .banner2 .picture {
+            position: relative;
+            width: 664px;
+            height: 424px;
+            border-radius: 8px;
+            margin: 71px 383px 0px 70px;
+            background-size: cover;
+            
+        }
+        .banner2 .picture img {
+            width: 664px;
+            height: 424px;
+            border-radius: 8px;
+            position: absolute;
+        }
+        .banner2 .picture h3 {
+            font-family: "Microsoft YaHei";
+            font-size: 24px;
+            color: #fff;
+        }
+        .banner2 .picture p {
+            font-family: "Microsoft YaHei";
+            font-size: 16px;
+            color: #fff;
+        }
+        .banner2 .content-pic {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+        }
+        .banner2 .gray {
+            position: absolute;
+            width: 664px;
+            height: 148px;
+            margin-top: 276px;
+            background-color: rgba(70, 68, 68, 0.5);
+            opacity: 0.6;
+            backdrop-filter: blur(6px);
+        }
+        .banner2 .content-font {
+            width: 664px;
+            height: 148px;
+            position: absolute;
+            margin-top: 276px;
+        }
+        .content-font h3 {
+            margin: 30px 352px 0px 50px;
+        }
+        .content-font p {
+            margin: 14px 102px 0px 50px;
+        }
+        
+
+        .banner3 {
+            width: 100%;
+            height: 865px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .banner3 .comment div:nth-child(1) {
+            top: 317px;
+            left: 110px;
+        }
+        .banner3 .comment div:nth-child(2) {
+            top: 317px;
+            left: 298px;
+        }
+        .banner3 .comment div:nth-child(3) {
+            top: 317px;
+            left: 480px;
+        }
+        .banner3 .comment div:nth-child(4) {
+            top: 317px;
+            left: 663px;
+        }
+        .banner3 .comment div:nth-child(5) {
+            top: 317px;
+            left: 847px;
+        }
+        .banner3 .comment div:nth-child(6) {
+            top: 317px;
+            left: 1032px;
+        }
+        .banner3 .comment {
+            position: relative;
+            width: 1200px;
+            height: 307px;
+            margin: 90px auto 0;
+        }
+        .banner3 .title4 {
+            width: 500px;
+            margin: auto;
+            margin-top: 94px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        .banner3 .title4 h3 {
+            font-family: "Microsoft YaHei";
+            font-size: 36px;
+
+        }
+        .banner3 .star {
+            width: 190px;
+            height: 30px;
+            margin: 24px 505px 0px 505px;
+        }
+        .banner3 .union {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            height: 341px;
+            box-shadow: 0 0 14px 0 rgba(186, 186, 186, 0.25);
+        }
+        .banner3 h4 {
+            color: #3c3c3c;
+            font-size: 26px;
+            margin: 48px 443px 0px 443px;
+        }
+        .banner3 .comment .union p {
+            color: #555555;
+            margin: auto;
+            margin-top: 86px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .banner3 ul {
+        display: flex;
+        gap: 88px;
+        margin: 110px auto 0;
+        justify-content: center;
+}
+        .banner3 ul li {
+            width: 96px;
+            height: 192px;
+        }
+        .banner3 ul li img{
+            border-radius: 50%;
+        }
+        .banner3 .highlight {
+            border: #19D0B2 3px solid;
+        }
+        .banner3 ul li p {
+            font-size: 16px;
+            font-family: "Microsoft YaHei UI";
+            color: #555555;
+            text-align: center;
+        }
+        .banner3 ul li div {
+            margin-top: 30px;
+        }
+
+
+
+        .banner4 {
+            width: 100%;
+            height: 507px;
+            display: flex;
+            flex-direction: column;
+            background: url(./pic/image\ 158.png) no-repeat center;
+            background-size: cover;
+        }
+        .banner4 div {
+            margin: auto;
+        }
+
+        .banner4 span {
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+            font-size: 20px;
+            text-align: center;
+            font-family: "Microsoft YaHei";
+        }
+        .banner4 .title4 {
+            width: 846px;
+            height: 53px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 0px;
+        }
+        .banner4 .title4 h3 {
+            font-family: "Microsoft YaHei";
+            font-size: 40px;
+            text-align: center;
+        }
+        .banner4 p {
+            margin: auto;
+            margin-bottom: 0px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #000;
+        }
+        .banner4 .easy {
+            margin-top: 20px;
+        }
+        .banner4 .easy p {
+            font-size: 24px;
+            font-family: "Microsoft YaHei";
+        }
+        .banner4 .download {
+            display: flex;
+            background: linear-gradient(to right bottom);
+        }
+        .banner4 .download {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        .banner4 .download div {
+            margin: 16px 16px 15px 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="center">
+        <div class="nav">
+            <img src="./pic/logo1.png" alt="">
+            <div>金舟DirectX.DLL一键修复</div>
+        </div>
+        <div class="content1">
+            <h1>金舟DirectX.DLL一键修复</h1>
+        </div>
+        <div class="content2">
+            <h3>免费智能检测DLL缺失，快速精准修复DLL，成功解决99.9% DLL问题！</h3>
+        </div>
+            <ul>
+                <li>
+                    <img src="./pic/icon1.png" alt="">
+                    <div>DirectX极速修复</div>
+                </li>
+                <li>
+                    <img src="./pic/icon2.png" alt="">
+                    <div>DLL丢失修复</div>
+
+                </li>
+                <li>
+                    <img src="./pic/icon3.png" alt="">
+                    <div>运行库修复</div>
+                </li>
+                <li>
+                    <img src="./pic/icon4.png" alt="">
+                    <div>错误代码修复</div>
+                </li>
+            </ul>
+        <a class="download" href="">
+            <div>立即下载</div>
+            <img src="./pic/Vector.png" alt="">
+        </a>
+        <div class="guar">
+        <div class="aut">
+            <img src="./pic/Group 36743.png" alt="">
+            <p>官方正版</p>
+        </div>
+        <div class="safe">
+            <img src="./pic/Group 36743.png" alt="">
+            </p>纯净安全</p>
+        </div>
+        </div>
+        <div class="user">
+            <div class="user1"><p>下载用户：<span>624,866</span>位</p></div>
+            <div class="times"><p>修复次数：<span>3,749,896</span>个</p></div>
+        </div>
+        <div class="system">
+            <p>适用系统：Win7 | Win8 | Win10 | Win11 更新时间：2024-11-24</p>
+        </div>
+        <img class="latest" src="./pic/label.png" alt="">
+    </div>
+    </div>
+
+
+
+    <!-- banner1 -->
+    <div class="banner1">
+        <div class="center">
+            <img class="green" src="./pic/Group 38171.png" alt="">
+        <div class="title2">
+            <h3>专业解决DLL丢失导致的常见软件和游戏报错问题</h3>
+        </div>
+        <div class="p2">
+            <p>恢复应用程序正常运行环境</p>
+        </div>
+
+        <ul>
+            <!-- 第一个 -->
+            <li>
+                <img class="tu1" src="./pic/Group 38177.png" alt="">
+                <div class="li-title"><h3>DLL文件丢失修复</h3></div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>系统提示DLL文件损坏</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>因缺少DLL导致应用程序无法打开</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>系游戏闪退提示DLL文件缺失</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>无法定位程序输入点</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>加载DLL失败</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>......</p>
+                </div>
+            </li>
+            <!-- 第二个 -->
+            <li>
+                <img class="tu1" src="./pic/Group 38176.png" alt="">
+                <div class="li-title"><h3>DirectX错误缺失修复</h3></div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>DirectX异常报错</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>找不到xinput.dll文件</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>找不到dxdcompiler.dll文件</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>找不到d3dx*.dll文件</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>打开游戏显示DirectX异常</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>......</p>
+                </div>
+            </li>
+            <!-- 第三个 -->
+            <li>
+                <img class="tu1" src="./pic/Group 38178.png" alt="">
+                <div class="li-title"><h3>运行库异常修复</h3></div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>c++运行库缺失</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>电脑缺失net文件</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>安装软件提示缺少net组件</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>游戏运行提示缺少c++</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>提示c++异常怎么解决</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>......</p>
+                </div>
+            </li>
+            <!-- 第四个 -->
+            <li>
+                <img class="tu1" src="./pic/Group 38160.png" alt="">
+                <div class="li-title"><h3>错误类型代码修复</h3></div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>0xc000007b错误提示</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>错误代码193提示</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>0xc0000043错误代码</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>0xc0000142是什么原因</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>总是出现错误代码怎么办</p>
+                </div>
+                <div class="li-content">
+                    <img src="./pic/Ellipse 254.png" alt="">
+                    <p>......</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+
+
+    <!-- banner2 -->
+    <div class="banner2">
+        <div class="center">
+            <img class="green1" src="./pic/Group 38172.png" alt="">
+        <div class="title3">
+            <h3>软件增值服务</h3>
+        </div>
+        <div class="content-pic">
+        <ul>
+            <li class="high">
+                <img class="show1" src="./pic/3-icon1-normal.png" alt="">
+                <img class="show2" src="./pic/3-icon1-selected.png" alt="">
+                <p>丰富DLL文件资源下载库</p>
+            </li>
+            <li>
+                <img class="show1" src="./pic/3-icon2-normal.png" alt="">
+                <img class="show2" src="./pic/3-icon2-selected.png" alt="">
+                <p>专业技术远程服务支持</p>
+            </li>
+            <li>
+                <img class="show1" src="./pic/3-icon3-normal.png" alt="">
+                <img class="show2" src="./pic/3-icon3-selected.png" alt="">
+                <p>应用软件持续升级</p>
+            </li>
+        </ul>
+        <div class="picture">
+            <img src="./pic/image 155.png" alt="">
+            <div class="gray">
+            </div>
+            <div class="content-font">
+                <h3>丰富DLL文件资源下载库</h3>
+                <p>方便你搜索指定DLL文件，优先加急修复DLL缺失问题，恢复应用程序和游戏正常运行环境</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- banner3 -->
+    <div class="banner3">
+        <div class="center">
+        <div class="title4">
+            <h3>用户评价</h3>
+        </div>
+        <div class="comment">
+            
+            <div class="item active"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+
+            <div class="union">
+                <h4>金舟DirectX·DLL一键修复</h4>
+                <img class="star" src="./pic/star.png" alt="">
+            <p>这款电脑DLL缺失修复软件非常有效，帮助我轻松解决了各种DLL文件丢失的问题。推荐给所有需要修复DLL错误的用户！</p>
+            
+            </div>
+            
+        </div>
+        <ul>
+            <li>
+                <img class="highlight" src="./pic/pexels-rajaalemnari-19849356 1.png" alt="">
+                <div><p>小安</p></div>
+            </li>
+            <li>
+                <img src="./pic/pexels-majesticaljasmin-9320042 1.png" alt="">
+                <div><p>john</p></div>
+            </li>
+            <li>
+                <img src="./pic/pexels-alexander-mass-748453803-26201510 1.png" alt="">
+                <div><p>Gdteio</p></div>
+            </li>
+            <li>
+                <img src="./pic/pexels-ayoub-moukhliss-1262835-26186220 1.png" alt="">
+                <div><p>黄先生</p></div>
+            </li>
+            <li>
+                <img src="./pic/pexels-the-hien-bui-367414537-25019973 1.png" alt="">
+                <div><p>星星眨眼✨</p></div>
+            </li>
+            <li>
+                <img src="./pic/pexels-ayoub-moukhliss-1262835-25748613 1.png" alt="">
+                <div><p>我不喜欢吃菜</p></div>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+
+    <!-- banner4 -->
+    <div class="banner4">
+        <div class="center">
+            <span>DLL缺失修复 
+ | 
+DirectX快速修复
+ | 
+系统运行库修复
+ | 
+错误代码修复</span>
+        <div class="title4">
+            <h3>金舟DirectX.DLL一键修复</h3>
+        </div>
+        <div class="easy">
+            <p>～轻松恢复正常运行环境～</p>
+        </div>
+        <a class="download" href="">
+            <div>立即下载</div>
+            <img src="./pic/Vector.png" alt="">
+        </a>
+    </div>
+    </div>
+
+    <script>
+        // banner3的切换评论内容和头像和箭头变换
+        let fontp = document.querySelector('.comment p')
+        let img = document.querySelectorAll('.banner3 ul li img')
+        let i = 1
+        let flag = 0
+        let items = document.querySelectorAll('.comment .item')
+
+        const texts = [
+        "这款电脑DLL缺失修复软件非常有效，帮助我轻松解决了各种DLL文件丢失的问题。推荐给所有需要修复DLL错误的用户！",
+        "电脑提示找不到mfc140u.dll，搞了半天终于用金舟DirectX.DLL一键修复软件解决了，非常给力! 五星好评！",
+        "之前下载游戏一直提示缺失DLL文件无法运行，网上找到金舟这款软件，抱着尝试这心态用了该软件，没想到一下就解决了游戏无法正常运行的问题！太棒了！",
+        "非常简单好用的一款DLL修复工具，作为一个电脑小白，我现在只需要点击一下，就能完美解决DLL错误，节省了很多时间！真心推荐！真好用！",
+        "DLL丢失，OFFICE都开不了，DLL文件修复功能后，马上就能用了，可怜我还反复重装了OFFICE好几次还以为是软件出问题了。没想到是系统出了问题！",
+        "wegame老是报错“无法定位程序输入点于动态链接库”，重装了好多次都搞不定，用它一下子就解决了！"
+    ];
+
+        let timer = setInterval(function(){
+            if(i - 1 >= 0){
+            img[i - 1].classList.remove('highlight')
+            document.querySelector('.comment .active').classList.remove('active')
+            }
+            else if(flag && i == 0){
+                 img[i + 5].classList.remove('highlight')
+                 document.querySelector('.comment .active').classList.remove('active')
+            }
+            img[i].classList.add('highlight')
+            items[i].classList.add('active')
+            fontp.innerHTML = texts[i]
+        
+            i++
+            if(i >= 6){
+                i = 0
+                flag = 1
+            }
+            
+        },2000)
+       
+        
+
+        // banner2的鼠标悬停内容切换
+        let h3 = document.querySelector('.banner2 .content-font h3')
+        let p = document.querySelector('.banner2 .content-font p')
+        let pic = document.querySelector('.banner2 .picture img')
+        const btn1 = document.querySelector('.banner2 ul li:nth-child(1)')
+        const btn2 = document.querySelector('.banner2 ul li:nth-child(2)')
+        const btn3 = document.querySelector('.banner2 ul li:nth-child(3)')
+
+        btn1.addEventListener('mouseenter', function(){
+            h3.innerHTML = "最新行业动态与深度技术解析"
+            p.innerHTML = "最新技术资讯与实战教程，每日更新，打造开发者首选知识库"
+            pic.src = "./pic/image 155.png"
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(1) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(1) .show2')
+            show1.style.display = "none"
+            show2.style.display = "block"
+            high.classList.remove('high')
+            btn1.classList.add('high')
+        })
+
+        btn2.addEventListener('mouseenter', function(){
+            h3.innerHTML = "专业技术远程服务支持"
+            p.innerHTML = "在使用过程中遇到任何问题，都可以联系客服，我们将为您提供专业、免费的技术支持"
+            pic.src = "./pic/image 156.png"
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(2) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(2) .show2')
+            show1.style.display = "none"
+            show2.style.display = "block"
+            high.classList.remove('high')
+            btn2.classList.add('high')
+        })
+
+        btn3.addEventListener('mouseenter', function(){
+            h3.innerHTML = "应用软件持续升级"
+            p.innerHTML = "金舟专业研发应用软件，持续升级更多功能！成为金舟会员，免费享有先进技术和服务"
+            pic.src = "./pic/image 157.png"
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(3) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(3) .show2')
+            show1.style.display = "none"
+            show2.style.display = "block"
+            high.classList.remove('high')
+            btn3.classList.add('high')
+        })
+
+
+        btn1.addEventListener('mouseleave', function(){
+
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(1) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(1) .show2')
+            show1.style.display = "block"
+            show2.style.display = "none"
+        })
+
+        btn2.addEventListener('mouseleave', function(){
+
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(2) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(2) .show2')
+            show1.style.display = "block"
+            show2.style.display = "none"
+        })
+
+        btn3.addEventListener('mouseleave', function(){
+
+            let high = document.querySelector('.high')
+            let show1 = document.querySelector('.banner2 ul li:nth-child(3) .show1')
+            let show2 = document.querySelector('.banner2 ul li:nth-child(3) .show2')
+            show1.style.display = "block"
+            show2.style.display = "none"
+        })
+
+
+
+        
+
+    </script>
+</body>
+</html>
